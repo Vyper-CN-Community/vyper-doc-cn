@@ -1,0 +1,154 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-2024 CC-BY-4.0 Vyper Team
+# This file is distributed under the same license as the Vyper package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Vyper \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-08 10:44+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../testing-contracts-brownie.rst:4
+msgid "Testing with Brownie"
+msgstr ""
+
+#: ../../testing-contracts-brownie.rst:6
+msgid ""
+"`Brownie <https://github.com/iamdefinitelyahuman/brownie>`_ is a Python-"
+"based development and testing framework for smart contracts. It includes "
+"a pytest plugin with fixtures that simplify testing your contract."
+msgstr ""
+
+#: ../../testing-contracts-brownie.rst:8
+msgid ""
+"This section provides a quick overview of testing with Brownie. To learn "
+"more, you can view the Brownie documentation on `writing unit tests "
+"<https://eth-brownie.readthedocs.io/en/stable/tests-pytest-intro.html>`_ "
+"or join the `Ethereum Python Dev Discord "
+"<https://discord.gg/abJEARdx3Q>`_ ``#brownie`` channel."
+msgstr ""
+
+#: ../../testing-contracts-brownie.rst:11
+msgid "Getting Started"
+msgstr ""
+
+#: ../../testing-contracts-brownie.rst:13
+msgid ""
+"In order to use Brownie for testing you must first `initialize a new "
+"project <https://eth-brownie.readthedocs.io/en/stable/init.html>`_. "
+"Create a new directory for the project, and from within that directory "
+"type:"
+msgstr ""
+
+#: ../../testing-contracts-brownie.rst:19
+msgid ""
+"This will create an empty `project structure <https://eth-"
+"brownie.readthedocs.io/en/stable/structure.html#structure>`_ within the "
+"directory. Store your contract sources within the project's "
+"``contracts/`` directory and your tests within ``tests/``."
+msgstr ""
+
+#: ../../testing-contracts-brownie.rst:22
+msgid "Writing a Basic Test"
+msgstr ""
+
+#: ../../testing-contracts-brownie.rst:24
+msgid ""
+"Assume the following simple contract ``Storage.vy``. It has a single "
+"integer variable and a function to set that value."
+msgstr ""
+
+#: ../../testing-contracts-brownie.rst:26
+msgid "storage.vy"
+msgstr ""
+
+#: ../../testing-contracts-brownie.rst:31
+msgid ""
+"We create a test file ``tests/test_storage.py`` where we write our tests "
+"in pytest style."
+msgstr ""
+
+#: ../../testing-contracts-brownie.rst:33
+msgid "test_storage.py"
+msgstr ""
+
+#: ../../testing-contracts-brownie.rst:63
+msgid "In this example we are using two fixtures which are provided by Brownie:"
+msgstr ""
+
+#: ../../testing-contracts-brownie.rst:65
+msgid ""
+"``accounts`` provides access to the :py:class:`Accounts "
+"<brownie.network.account.Accounts>` container, containing all of your "
+"local accounts"
+msgstr ""
+
+#: ../../testing-contracts-brownie.rst:66
+msgid ""
+"``Storage`` is a dynamically named fixture that provides access to a "
+":py:class:`ContractContainer "
+"<brownie.network.contract.ContractContainer>` object, used to deploy your"
+" contract"
+msgstr ""
+
+#: ../../testing-contracts-brownie.rst:70
+msgid ""
+"To run the tests, use the ``brownie test`` command from the root "
+"directory of your project."
+msgstr ""
+
+#: ../../testing-contracts-brownie.rst:73
+msgid "Testing Events"
+msgstr ""
+
+#: ../../testing-contracts-brownie.rst:75
+msgid ""
+"For the remaining examples, we expand our simple storage contract to "
+"include an event and two conditions for a failed transaction: "
+"``advanced_storage.vy``"
+msgstr ""
+
+#: ../../testing-contracts-brownie.rst:77
+msgid "advanced_storage.vy"
+msgstr ""
+
+#: ../../testing-contracts-brownie.rst:82
+msgid ""
+"To test events, we examine the :py:class:`TransactionReceipt "
+"<brownie.network.transaction.TransactionReceipt>` object which is "
+"returned after each successful transaction. It contains an "
+":py:class:`events <brownie.network.event.EventDict>` member with "
+"information about events that fired."
+msgstr ""
+
+#: ../../testing-contracts-brownie.rst:112
+msgid "Handling Reverted Transactions"
+msgstr ""
+
+#: ../../testing-contracts-brownie.rst:114
+msgid ""
+"Transactions that revert raise a :py:class:`VirtualMachineError "
+"<brownie.exceptions.VirtualMachineError>` exception. To write assertions "
+"around this you can use :py:class:`brownie.reverts "
+"<brownie.test.plugin.RevertContextManager>` as a context manager. It "
+"functions very similarly to :py:func:`pytest.raises <pytest.raises>`."
+msgstr ""
+
+#: ../../testing-contracts-brownie.rst:116
+msgid ""
+":py:class:`brownie.reverts <brownie.test.plugin.RevertContextManager>` "
+"optionally accepts a string as an argument. If given, the error string "
+"returned by the transaction must match it in order for the test to pass."
+msgstr ""
+

@@ -1,0 +1,508 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2017-2024 CC-BY-4.0 Vyper Team
+# This file is distributed under the same license as the Vyper package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Vyper \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-09-08 10:44+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language: zh_CN\n"
+"Language-Team: zh_CN <LL@li.org>\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.17.0\n"
+
+#: ../../compiling-a-contract.rst:2
+msgid "Compiling a Contract"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:5
+msgid "Command-Line Compiler Tools"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:7
+msgid "Vyper includes the following command-line scripts for compiling contracts:"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:9
+msgid "``vyper``: Compiles vyper contract or archive files"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:10
+msgid "``vyper-json``: Provides a JSON interface to the compiler"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:14
+msgid ""
+"The ``--help`` flag gives verbose explanations of how to use each of "
+"these scripts."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:19
+msgid "vyper"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:21
+msgid ""
+"``vyper`` provides CLI access to the compiler. It can generate various "
+"outputs including simple binaries, ASTs, interfaces and source mappings."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:23
+msgid "To compile a contract:"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:30
+msgid ""
+"Include the ``-f`` flag to specify which output formats to return. Use "
+"``vyper --help`` for a full list of output options."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:37
+msgid ""
+"The ``opcodes`` and ``opcodes_runtime`` output of the compiler has been "
+"returning incorrect opcodes since ``0.2.0`` due to a lack of 0 padding "
+"(patched via `PR 3735 <https://github.com/vyperlang/vyper/pull/3735>`_). "
+"If you rely on these functions for debugging, please use the latest "
+"patched versions."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:39
+msgid ""
+"The ``-p`` flag allows you to set a root path that is used when searching"
+" for interface files to import.  If none is given, it will default to the"
+" current working directory. See :ref:`searching_for_imports` for more "
+"information."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:49
+msgid "Storage Layout"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:51
+msgid "To display the default storage layout for a contract:"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:57
+msgid ""
+"This outputs a JSON object detailing the locations for all state "
+"variables as determined by the compiler."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:59
+msgid "To override the default storage layout for a contract:"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:65
+msgid ""
+"The input to the ``--storage-layout-file`` flag must match the format of "
+"the ``.storage_layout`` field from the ``vyper -f layout`` command."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:71
+msgid "vyper-json"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:73
+msgid ""
+"``vyper-json`` provides a JSON interface for the compiler. It expects a "
+":ref:`JSON formatted input<vyper-json-input>` and returns the compilation"
+" result in a :ref:`JSON formatted output<vyper-json-output>`."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:75
+msgid "To compile from JSON supplied via ``stdin``:"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:81
+msgid "To compile from a JSON file:"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:87
+msgid ""
+"By default, the output is sent to ``stdout``. To redirect to a file, use "
+"the ``-o`` flag:"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:94
+msgid "Importing Interfaces"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:96
+msgid "``vyper-json`` searches for imported interfaces in the following sequence:"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:98
+msgid "Interfaces defined in the ``interfaces`` field of the input JSON."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:99
+msgid ""
+"Derived interfaces generated from contracts in the ``sources`` field of "
+"the input JSON."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:101
+msgid ""
+"See :ref:`searching_for_imports` for more information on Vyper's import "
+"system."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:104
+msgid "Online Compilers"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:107
+msgid "Try VyperLang!"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:109
+msgid ""
+"`Try VyperLang! <https://try.vyperlang.org>`_ is a JupyterHub instance "
+"hosted by the Vyper team as a sandbox for developing and testing "
+"contracts in Vyper. It requires github for login, and supports deployment"
+" via the browser."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:112
+msgid "Remix IDE"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:114
+msgid ""
+"`Remix IDE <https://remix.ethereum.org>`_ is a compiler and JavaScript VM"
+" for developing and testing contracts in Vyper, as well as Solidity."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:118
+msgid ""
+"While the Vyper version of the Remix IDE compiler is updated on a regular"
+" basis, it might be a bit behind the latest version found in the master "
+"branch of the repository. Make sure the byte code matches the output from"
+" your local compiler."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:123
+msgid "Compiler Optimization Modes"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:125
+msgid ""
+"The Vyper CLI tool accepts an optimization mode ``\"none\"``, "
+"``\"codesize\"``, or ``\"gas\"`` (default). It can be set using the "
+"``--optimize`` flag. For example, invoking ``vyper --optimize codesize "
+"MyContract.vy`` will compile the contract, optimizing for code size. As a"
+" rough summary of the differences between gas and codesize mode, in gas "
+"optimized mode, the compiler will try to generate bytecode which "
+"minimizes gas (up to a point), including:"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:127
+msgid "using a sparse selector table which optimizes for gas over codesize"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:128
+msgid "inlining some constants, and"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:129
+msgid "trying to unroll some loops, especially for data copies."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:131
+msgid ""
+"In codesize optimized mode, the compiler will try hard to minimize "
+"codesize by"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:133
+msgid "using a dense selector table"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:134
+msgid "out-lining code, and"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:135
+msgid "using more loops for data copies."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:138
+msgid "Enabling Experimental Code Generation"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:140
+msgid ""
+"When compiling, you can use the CLI flag ``--experimental-codegen`` or "
+"its alias ``--venom`` to activate the new `Venom IR "
+"<https://github.com/vyperlang/vyper/blob/master/vyper/venom/README.md>`_."
+" Venom IR is inspired by LLVM IR and enables new advanced analysis and "
+"optimizations."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:146
+msgid "Setting the Target EVM Version"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:148
+msgid ""
+"When you compile your contract code, you can specify the target Ethereum "
+"Virtual Machine version to compile for, to access or avoid particular "
+"features. You can specify the version either with a source code pragma or"
+" as a compiler option. It is recommended to use the compiler option when "
+"you want flexibility (for instance, ease of deploying across different "
+"chains), and the source code pragma when you want bytecode "
+"reproducibility (for instance, when verifying code on a block explorer)."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:151
+msgid ""
+"If the evm version specified by the compiler options conflicts with the "
+"source code pragma, an exception will be raised and compilation will not "
+"continue."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:153
+msgid ""
+"For instance, the adding the following pragma to a contract indicates "
+"that it should be compiled for the \"prague\" fork of the EVM."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:161
+msgid ""
+"Compiling for the wrong EVM version can result in wrong, strange, or "
+"failing behavior. Please ensure, especially if running a private chain, "
+"that you use matching EVM versions."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:163
+msgid ""
+"When compiling via the ``vyper`` CLI, you can specify the EVM version "
+"option using the ``--evm-version`` flag:"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:169
+msgid ""
+"When using the JSON interface, you can include the ``\"evmVersion\"`` key"
+" within the ``\"settings\"`` field:"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:180
+msgid "Target Options"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:182
+msgid ""
+"The following is a list of supported EVM versions, and changes in the "
+"compiler introduced with each version. Backward compatibility is not "
+"guaranteed between each version. In general, the compiler team maintains "
+"an informal policy that the compiler will support 3 years of hard fork "
+"rulesets, but this policy may be revisited as appropriate."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:189
+msgid ""
+"``block.difficulty`` is deprecated in favor of its new alias, "
+"``block.prevrandao``."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:193
+msgid ""
+"The ``PUSH0`` opcode is automatically generated by the compiler instead "
+"of ``PUSH1 0``"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:197
+msgid ""
+"The ``transient`` keyword allows declaration of variables which live in "
+"transient storage"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:198
+msgid ""
+"Functions marked with ``@nonreentrant`` are protected with TLOAD/TSTORE "
+"instead of SLOAD/SSTORE"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:199
+msgid ""
+"The ``MCOPY`` opcode will be generated automatically by the compiler for "
+"most memory operations."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:206
+msgid "Controlling Warnings"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:208
+msgid ""
+"Vyper allows suppression of warnings via the CLI flag ``-Wnone``, or "
+"promotion of (all) warnings to errors via the ``-Werror`` flag."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:222
+msgid "Integrity Hash"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:224
+msgid ""
+"To help tooling detect whether two builds are the same, Vyper provides "
+"the ``-f integrity`` output, which outputs the integrity hash of a "
+"contract. The integrity hash is recursively defined as the sha256 of the "
+"source code with the integrity hashes of its dependencies (imports) and "
+"storage layout overrides (if provided)."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:229
+msgid "Vyper Archives"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:231
+msgid ""
+"A Vyper archive is a compileable bundle of input sources and settings. "
+"Technically, it is a `ZIP file "
+"<https://en.wikipedia.org/wiki/ZIP_(file_format)>`_, with a special "
+"structure to make it useable as input to the compiler. It can use any "
+"suffix, but the convention is to use a ``.zip`` suffix or ``.vyz`` "
+"suffix. It must contain a ``MANIFEST/`` folder, with the following "
+"directory structure."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:244
+msgid ""
+"``cli_settings.txt`` is a text representation of the settings that were "
+"used on the compilation run that generated this archive."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:245
+msgid ""
+"``compilation_targets`` is a newline separated list of compilation "
+"targets. Currently only one compilation is supported"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:246
+msgid ""
+"``compiler_version`` is a text representation of the compiler version "
+"used to generate this archive"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:247
+msgid ""
+"``integrity`` is the :ref:`integrity hash <integrity-hash>` of the input "
+"contract"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:248
+msgid ""
+"``searchpaths`` is a newline-separated list of the search paths used on "
+"this compilation run"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:249
+msgid ""
+"``settings.json`` is a json representation of the settings used on this "
+"compilation run. It is 1:1 with ``cli_settings.txt``, but both are "
+"provided as they are convenient for different workflows (typically, "
+"manually vs automated)."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:250
+msgid ""
+"``storage_layout.json`` is a json representation of the storage layout "
+"overrides to be used on this compilation run. It is optional."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:252
+msgid ""
+"A Vyper archive file can be produced by requesting the ``-f archive`` "
+"output format. The compiler can also produce the archive in base64 "
+"encoded form using the ``--base64`` flag. The Vyper compiler can accept "
+"both ``.vyz`` and base64-encoded Vyper archives directly as input."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:262
+msgid "Compiler Input and Output JSON Description"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:264
+msgid ""
+"JSON input/output is provided for compatibility with solidity, however, "
+"the recommended way is to use the aforementioned :ref:`Vyper archives "
+"<vyper-archives>`. So-called \"standard json\" input can be generated "
+"from a contract using the ``vyper -f solc_json`` output format."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:266
+msgid ""
+"Where possible, the Vyper JSON compiler formats follow those of `Solidity"
+" <https://solidity.readthedocs.io/en/latest/using-the-compiler.html"
+"#compiler-input-and-output-json-description>`_."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:271
+msgid "Input JSON Description"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:273
+msgid ""
+"The following example describes the expected input format of ``vyper-"
+"json``. (Comments are not normally permitted in JSON and are used here "
+"for explanatory purposes)."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:365
+msgid "Output JSON Description"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:367
+msgid ""
+"The following example describes the output format of ``vyper-json``. "
+"Comments are of course not permitted and used here *only for explanatory "
+"purposes*."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:474
+msgid "Errors"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:476
+msgid ""
+"Each error includes a ``component`` field, indicating the stage at which "
+"it occurred:"
+msgstr ""
+
+#: ../../compiling-a-contract.rst:478
+msgid ""
+"``json``: Errors that occur while parsing the input JSON. Usually, a "
+"result of invalid JSON or a required value that is missing."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:479
+msgid ""
+"``parser``: Errors that occur while parsing the contracts. Usually, a "
+"result of invalid Vyper syntax."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:480
+msgid "``compiler``: Errors that occur while compiling the contracts."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:481
+msgid ""
+"``vyper``: Unexpected errors that occur within Vyper. If you receive an "
+"error of this type, please open an issue."
+msgstr ""
+
+#: ../../compiling-a-contract.rst:483
+msgid ""
+"You can also use the ``--traceback`` flag to receive a standard Python "
+"traceback when an error is encountered."
+msgstr ""
+
