@@ -25,7 +25,8 @@ author = "Vyper Team (originally created by Vitalik Buterin)"
 
 # 动态语言设置
 language = os.environ.get("READTHEDOCS_LANGUAGE", os.environ.get("DOCS_LANGUAGE", "en"))
-locale_dirs = ["locale/"]
+# NOTE: sphinx-intl 默认生成 locales/<lang>/LC_MESSAGES
+locale_dirs = ["locales/"]
 gettext_compact = False
 
 # -- Options for HTML output ----------------------------------------------
