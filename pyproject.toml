@@ -6,7 +6,7 @@
 [tool.black]
 line-length = 100
 target-version = ['py310']
-include = '\.pyi?$'
+include = '\\.[pyi]?$'
 exclude = '''
 /(
     \.eggs
@@ -22,3 +22,25 @@ exclude = '''
   | venv
 )/
 '''
+
+[project]
+name = "vyper-doc-cn"
+version = "0.0.0"
+description = "Chinese translation aggregation for Vyper documentation"
+requires-python = ">=3.10"
+license = { text = "CC-BY-4.0" }
+authors = [ { name = "Vyper CN Community" } ]
+readme = "README.md"
+dependencies = []
+
+[project.optional-dependencies]
+docs = [
+  "sphinx==7.2.6",
+  "sphinx-copybutton==0.5.2",
+  "shibuya==2024.1.17",
+  "sphinx-intl>=2.1.0",
+]
+
+[tool.uv]
+# uv 目前无 dependency-groups 字段；使用 extras 方式：uv add --group 不适用此处，直接用 uv pip / uv run pip
+# 安装文档依赖使用: uv pip install -e .[docs]
