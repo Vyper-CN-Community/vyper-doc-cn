@@ -1,84 +1,53 @@
-<img src="https://raw.githubusercontent.com/vyperlang/vyper/master/docs/logo.svg?sanitize=true" alt="" width="110">
+---
 
-[![Build Status](https://github.com/vyperlang/vyper/actions/workflows/test.yml/badge.svg)](https://github.com/vyperlang/vyper/actions/workflows/test.yml)
-[![Documentation Status](https://readthedocs.org/projects/vyper/badge/?version=latest)](http://docs.vyperlang.org/en/latest/?badge=latest "ReadTheDocs")
-[![Discord](https://img.shields.io/discord/969926564286459934.svg?label=%23vyper)](https://discord.gg/6tw7PTM7C2)
-[![Telegram](https://img.shields.io/badge/Vyperholics🐍-Telegram-blue)](https://t.me/vyperlang)
-[![Twitter](https://img.shields.io/twitter/follow/vyperlang)](https://x.com/vyperlang)
+# 中文文档构建说明
 
-[![PyPI](https://badge.fury.io/py/vyper.svg)](https://pypi.org/project/vyper "PyPI")
-[![Docker](https://img.shields.io/docker/cloud/build/vyperlang/vyper)](https://hub.docker.com/r/vyperlang/vyper "DockerHub")
+本项目为 Vyper 智能合约语言的中文文档翻译项目。
 
-[![Coverage Status](https://codecov.io/gh/vyperlang/vyper/branch/master/graph/badge.svg)](https://codecov.io/gh/vyperlang/vyper "Codecov")
-[![Language grade: Python](https://github.com/vyperlang/vyper/workflows/CodeQL/badge.svg)](https://github.com/vyperlang/vyper/actions/workflows/codeql.yml)
+## 环境配置
 
-# Getting Started
-See [Installing Vyper](http://docs.vyperlang.org/en/latest/installing-vyper.html) to install vyper.
-See [Tools and Resources](https://docs.vyperlang.org/en/latest/resources.html) for an additional list of framework and tools with vyper support.
-See [Documentation](http://docs.vyperlang.org/en/latest/index.html) for the documentation and overall design goals of the Vyper language.
+### 安装依赖
 
-See [learn.vyperlang.org](https://learn.vyperlang.org/) for **learning Vyper by building a Pokémon game**.
-See [try.vyperlang.org](https://try.vyperlang.org/) to use Vyper in a hosted jupyter environment!
-
-**Note: Vyper is constantly evolving, use with care and understand the risks associated with smart contract development.**
-
-# Installation
-See the [Vyper documentation](https://docs.vyperlang.org/en/latest/installing-vyper.html)
-for build instructions.
-
-# Compiling a contract
-To compile a contract, use:
-```bash
-vyper your_file_name.vy
-```
-***generate bytecode***
-
-    vyper -f bytecode file-name.vy > file-name.bin
-
-***generate abi***
-
-    vyper -f abi file-name.vy > file-name.abi
-
-There is also an [online compiler](https://vyper.online/) available you can use to experiment with
-the language and compile to ``bytecode`` and/or ``IR``.
-
-**Note: While the vyper version of the online compiler is updated on a regular basis it might
-be a bit behind the latest version found in the master branch of this repository.**
-
-## Testing (using pytest)
-
-(Complete [installation steps](https://docs.vyperlang.org/en/latest/installing-vyper.html) first.)
+推荐使用 `uv` 包管理器进行依赖管理：
 
 ```bash
-make dev-init
-./quicktest.sh -m "not fuzzing"
+# 安装文档构建依赖
+uv pip install -e .[docs]
+
+# 或者使用传统 pip（如果缺少某些包，需要单独安装）
+pip install sphinx==7.2.6 sphinx-copybutton==0.5.2 shibuya==2024.1.17 sphinx-intl>=2.1.0
 ```
 
-## Testing (with hevm)
+### 文档构建
 
-Install hevm by downloading it from the releases page (https://github.com/ethereum/hevm/releases/latest) and making sure it is in your PATH. hevm tests can be enabled with `--hevm` flag, and hevm tests can be selected with the `-m hevm` marker. For instance, `./quicktest.sh -m "hevm" --hevm`.
+如果遇到 `'sphinx-build' is not recognized` 错误，请使用 `python -m sphinx` 替代：
 
-## Developing (working on the compiler)
-
-A useful script to have in your PATH is something like the following:
 ```bash
-$ cat ~/.local/bin/vyc
-#!/usr/bin/env bash
-PYTHONPATH=. python vyper/cli/vyper_compile.py "$@"
+# 构建英文文档（HTML）
+python -m sphinx -b html docs docs/_build/html
+
+# 生成翻译模板（POT 文件）
+python -m sphinx -b gettext docs docs/_build/gettext
+
+# 使用检查脚本验证构建（无警告/错误）
+python scripts/check_docs.py
 ```
 
-To run a python performance profile (to find compiler perf hotspots):
+### 国际化工作流
+
 ```bash
-PYTHONPATH=. python -m cProfile -s tottime vyper/cli/vyper_compile.py "$@"
+# 初始化中文翻译（生成 PO 文件）
+sphinx-intl update -p docs/_build/gettext -l zh_CN
+
+# 构建中文文档
+python -m sphinx -b html -D language=zh_CN docs docs/_build/html/zh_CN
+
+# 检查翻译进度
+python scripts/po_stats.py
 ```
 
-To get a call graph from a python profile, pip install `gprof2dot` and `xdot`, and run it like `gprof2dot -f pstats stats | xdot -`. (See https://stackoverflow.com/a/23164271/).
+## 翻译规范
 
-The utility timer functions `timeit`, `profileit` and `cumtimeit` are available in `vyper/utils.py`.
-
-
-# Contributing
-* See Issues tab, and feel free to submit your own issues
-* Add PRs if you discover a solution to an existing issue
-* For further discussions and questions, post in [Discussions](https://github.com/vyperlang/vyper/discussions) or talk to us on [Discord](https://discord.gg/6tw7PTM7C2)
-* For more information, see [Contributing](http://docs.vyperlang.org/en/latest/contributing.html)
+* 参考 `TERMS.md` 获取术语翻译标准
+* 使用 Poedit 等工具编辑 PO 文件
+* 遵循中文技术文档书写规范
