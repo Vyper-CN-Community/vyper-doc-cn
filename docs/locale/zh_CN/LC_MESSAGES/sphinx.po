@@ -21,21 +21,20 @@ msgstr ""
 
 #: ../../_templates/versions.html:16
 msgid "Versions"
-msgstr ""
+msgstr "版本"
 
 #: ../../_templates/versions.html:21
 msgid "Downloads"
-msgstr ""
+msgstr "下载"
 
 #: ../../_templates/versions.html:27
 msgid "On Read the Docs"
-msgstr ""
+msgstr "在 Read the Docs 上"
 
 #: ../../_templates/versions.html:29
 msgid "Project Home"
-msgstr ""
+msgstr "项目主页"
 
 #: ../../_templates/versions.html:32
 msgid "Builds"
-msgstr ""
-
+msgstr "构建"

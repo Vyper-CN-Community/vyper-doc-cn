@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../testing-contracts-titanoboa.rst:4
 msgid "Testing with Titanoboa"
-msgstr ""
+msgstr "使用 Titanoboa 进行测试"
 
 #: ../../testing-contracts-titanoboa.rst:6
 msgid ""
@@ -33,5 +33,4 @@ msgid ""
 "overview of testing strategies. Finally, a more detailed API reference is"
 " available in the `API reference subsection "
 "<https://titanoboa.readthedocs.io/en/latest/api.html>`_."
-msgstr ""
-
+msgstr "Titanoboa 是一个 Vyper 解释器，它速度快，并为开发 vyper 应用程序提供了一个“瑞士军刀”工具包。最好的起点是 `官方文档 <https://titanoboa.readthedocs.io/>`_，然后跳到 `测试参考 <https://titanoboa.readthedocs.io/en/latest/testing.html>`_ 以获取测试策略的概述。最后，`API 参考小节 <https://titanoboa.readthedocs.io/en/latest/api.html>`_ 中提供了更详细的 API 参考。"

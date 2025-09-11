@@ -21,25 +21,24 @@ msgstr ""
 
 #: ../../toctree.rst:5
 msgid "Overview"
-msgstr ""
+msgstr "概述"
 
 #: ../../toctree.rst:10
 msgid "Getting Started"
-msgstr ""
+msgstr "入门"
 
 #: ../../toctree.rst:17
 msgid "Language Description"
-msgstr ""
+msgstr "语言描述"
 
 #: ../../toctree.rst:33
 msgid "Using the Compiler"
-msgstr ""
+msgstr "使用编译器"
 
 #: ../../toctree.rst:42
 msgid "Additional Resources"
-msgstr ""
+msgstr "其他资源"
 
 #: ../../toctree.rst:3
 msgid "Vyper"
-msgstr ""
-
+msgstr "Vyper"

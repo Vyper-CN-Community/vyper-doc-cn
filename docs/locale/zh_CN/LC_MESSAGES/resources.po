@@ -21,180 +21,179 @@ msgstr ""
 
 #: ../../resources.rst:4
 msgid "Other resources and learning material"
-msgstr ""
+msgstr "其他资源和学习材料"
 
 #: ../../resources.rst:6
 msgid ""
 "Vyper has an active community. You can find third-party tutorials, "
 "examples, courses, and other learning material."
-msgstr ""
+msgstr "Vyper 有一个活跃的社区。您可以找到第三方教程、示例、课程和其他学习材料。"
 
 #: ../../resources.rst:9
 msgid "General"
-msgstr ""
+msgstr "常规"
 
 #: ../../resources.rst:11
 msgid ""
 "`Cyfrin Updraft - Python & Vyper <https://updraft.cyfrin.io/courses"
 "/intro-python-vyper-smart-contract-development/>`_ by Cyfrin"
-msgstr ""
+msgstr "`Cyfrin Updraft - Python & Vyper <https://updraft.cyfrin.io/courses/intro-python-vyper-smart-contract-development/>`_ by Cyfrin"
 
 #: ../../resources.rst:12
 msgid ""
 "`Ape Academy – Learn how to build Vyper projects "
 "<https://academy.apeworx.io/>`_ by ApeWorX"
-msgstr ""
+msgstr "`Ape Academy – 学习如何构建 Vyper 项目 <https://academy.apeworx.io/>`_ by ApeWorX"
 
 #: ../../resources.rst:13
 msgid ""
 "`More Vyper by Example <https://vyper-by-example.org/>`_ by Smart "
 "Contract Engineer"
-msgstr ""
+msgstr "`More Vyper by Example <https://vyper-by-example.org/>`_ by Smart Contract Engineer"
 
 #: ../../resources.rst:14
 msgid "`Vyper cheat Sheet <https://reference.auditless.com/cheatsheet>`_"
-msgstr ""
+msgstr "`Vyper 备忘单 <https://reference.auditless.com/cheatsheet>`_"
 
 #: ../../resources.rst:15
 msgid "`Vyper Hub for development <https://github.com/zcor/vyper-dev>`_"
-msgstr ""
+msgstr "`用于开发的 Vyper Hub <https://github.com/zcor/vyper-dev>`_"
 
 #: ../../resources.rst:16
 msgid ""
 "`Vyper greatest hits smart contract examples "
 "<https://github.com/pynchmeister/vyper-greatest-"
 "hits/tree/main/contracts>`_"
-msgstr ""
+msgstr "`Vyper 最伟大的智能合约示例 <https://github.com/pynchmeister/vyper-greatest-hits/tree/main/contracts>`_"
 
 #: ../../resources.rst:17
 msgid ""
 "`A curated list of Vyper resources, libraries, tools, and more "
 "<https://github.com/stars/pcaversaccio/lists/vyper>`_"
-msgstr ""
+msgstr "`精选的 Vyper 资源、库、工具等列表 <https://github.com/stars/pcaversaccio/lists/vyper>`_"
 
 #: ../../resources.rst:20
 msgid "Frameworks and tooling"
-msgstr ""
+msgstr "框架和工具"
 
 #: ../../resources.rst:22
 msgid ""
 "`Titanoboa – A Vyper interpreter with pretty tracebacks, forking, "
 "debugging features and more <https://github.com/vyperlang/titanoboa/>`_"
-msgstr ""
+msgstr "`Titanoboa – 一个 Vyper 解释器，具有漂亮的追溯、分叉、调试功能等 <https://github.com/vyperlang/titanoboa/>`_"
 
 #: ../../resources.rst:23
 msgid ""
 "`Moccasin - A smart contract development and testing framework for Vyper "
 "and Python, built on Titanoboa <https://cyfrin.github.io/moccasin/>`_"
-msgstr ""
+msgstr "`Moccasin - 一个用于 Vyper 和 Python 的智能合约开发和测试框架，构建在 Titanoboa 之上 <https://cyfrin.github.io/moccasin/>`_"
 
 #: ../../resources.rst:24
 msgid ""
 "`ApeWorX – The Ethereum development framework for Python Developers, Data"
 " Scientists, and Security Professionals <https://www.apeworx.io/>`_"
-msgstr ""
+msgstr "`ApeWorX – 面向 Python 开发人员、数据科学家和安全专业人员的以太坊开发框架 <https://www.apeworx.io/>`_"
 
 #: ../../resources.rst:25
 msgid ""
 "`VyperDeployer – A helper smart contract to compile and test Vyper "
 "contracts in Foundry "
 "<https://github.com/pcaversaccio/snekmate/blob/main/lib/utils/VyperDeployer.sol>`_"
-msgstr ""
+msgstr "`VyperDeployer – 一个辅助智能合约，用于在 Foundry 中编译和测试 Vyper 合约 <https://github.com/pcaversaccio/snekmate/blob/main/lib/utils/VyperDeployer.sol>`_"
 
 #: ../../resources.rst:26
 msgid ""
 "`🐍 snekmate – Vyper smart contract building blocks "
 "<https://github.com/pcaversaccio/snekmate>`_"
-msgstr ""
+msgstr "`🐍 snekmate – Vyper 智能合约构建块 <https://github.com/pcaversaccio/snekmate>`_"
 
 #: ../../resources.rst:27
 msgid ""
 "`Serpentor – A set of smart contracts tools for governance "
 "<https://github.com/yearn/serpentor>`_"
-msgstr ""
+msgstr "`Serpentor – 一组用于治理的智能合约工具 <https://github.com/yearn/serpentor>`_"
 
 #: ../../resources.rst:28
 msgid ""
 "`Smart contract development frameworks and tools for Vyper on "
 "Ethereum.org <https://ethereum.org/en/developers/docs/programming-"
 "languages/python/>`_"
-msgstr ""
+msgstr "`Ethereum.org 上用于 Vyper 的智能合约开发框架和工具 <https://ethereum.org/en/developers/docs/programming-languages/python/>`_"
 
 #: ../../resources.rst:29
 msgid ""
 "`Vyper Online Compiler - an online platform for compiling and deploying "
 "Vyper smart contracts <https://github.com/0x0077/vyper-online-compiler>`_"
-msgstr ""
+msgstr "`Vyper 在线编译器 - 一个用于编译和部署 Vyper 智能合约的在线平台 <https://github.com/0x0077/vyper-online-compiler>`_"
 
 #: ../../resources.rst:32
 msgid "Security"
-msgstr ""
+msgstr "安全性"
 
 #: ../../resources.rst:34
 msgid ""
 "`VyperPunk – learn to secure and hack Vyper smart contracts "
 "<https://github.com/SupremacyTeam/VyperPunk>`_"
-msgstr ""
+msgstr "`VyperPunk – 学习保护和破解 Vyper 智能合约 <https://github.com/SupremacyTeam/VyperPunk>`_"
 
 #: ../../resources.rst:35
 msgid ""
 "`VyperExamples – Vyper vulnerability examples "
 "<https://www.vyperexamples.com/reentrancy>`_"
-msgstr ""
+msgstr "`VyperExamples – Vyper 漏洞示例 <https://www.vyperexamples.com/reentrancy>`_"
 
 #: ../../resources.rst:38
 msgid "Conference presentations"
-msgstr ""
+msgstr "会议演讲"
 
 #: ../../resources.rst:40
 msgid ""
 "`Vyper Smart Contract Programming Language by Patrick Collins (2022, 30 "
 "mins) <https://www.youtube.com/watch?v=b-sOMNF9quo&t=1444s>`_"
-msgstr ""
+msgstr "`Vyper 智能合约编程语言 by Patrick Collins (2022, 30 分钟) <https://www.youtube.com/watch?v=b-sOMNF9quo&t=1444s>`_"
 
 #: ../../resources.rst:41
 msgid ""
 "`Python and DeFi by Curve Finance (2022, 15 mins) "
 "<https://www.youtube.com/watch?v=4HOU3z0LoDg>`_"
-msgstr ""
+msgstr "`Python and DeFi by Curve Finance (2022, 15 分钟) <https://www.youtube.com/watch?v=4HOU3z0LoDg>`_"
 
 #: ../../resources.rst:42
 msgid ""
 "`My experience with Vyper over the years by Benjamin Scherrey (2022, 15 "
 "mins) <https://www.youtube.com/watch?v=_j7qF_GlyWE>`_"
-msgstr ""
+msgstr "`我多年来使用 Vyper 的经验 by Benjamin Scherrey (2022, 15 分钟) <https://www.youtube.com/watch?v=_j7qF_GlyWE>`_"
 
 #: ../../resources.rst:43
 msgid ""
 "`Short introduction to Vyper by Edison Que (3 mins) "
 "<https://www.youtube.com/watch?v=dXqln-keyHw&t=4s>`_"
-msgstr ""
+msgstr "`Edison Que 对 Vyper 的简短介绍 (3 分钟) <https://www.youtube.com/watch?v=dXqln-keyHw&t=4s>`_"
 
 #: ../../resources.rst:46
 msgid "Unmaintained"
-msgstr ""
+msgstr "未维护"
 
 #: ../../resources.rst:48
 msgid ""
 "These resources have not been updated for a while, but may still offer "
 "interesting content."
-msgstr ""
+msgstr "这些资源已经有一段时间没有更新了，但可能仍然提供有趣的内容。"
 
 #: ../../resources.rst:50
 msgid ""
 "`Awesome Vyper curated resources <https://github.com/spadebuilders"
 "/awesome-vyper>`_"
-msgstr ""
+msgstr "`Awesome Vyper 精选资源 <https://github.com/spadebuilders/awesome-vyper>`_"
 
 #: ../../resources.rst:51
 msgid ""
 "`Brownie – Python framework for developing smart contracts (deprecated) "
 "<https://eth-brownie.readthedocs.io/en/stable/>`_"
-msgstr ""
+msgstr "`Brownie – 用于开发智能合约的 Python 框架（已弃用）<https://eth-brownie.readthedocs.io/en/stable/>`_"
 
 #: ../../resources.rst:52
 msgid ""
 "`Foundry x Vyper – Foundry template to compile Vyper contracts "
 "<https://github.com/0xKitsune/Foundry-Vyper>`_"
-msgstr ""
-
+msgstr "`Foundry x Vyper – 用于编译 Vyper 合约的 Foundry 模板 <https://github.com/0xKitsune/Foundry-Vyper>`_"

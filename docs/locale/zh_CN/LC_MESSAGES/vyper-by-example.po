@@ -21,11 +21,11 @@ msgstr ""
 
 #: ../../vyper-by-example.rst:2
 msgid "Vyper by Example"
-msgstr ""
+msgstr "Vyper 示例"
 
 #: ../../vyper-by-example.rst:7
 msgid "Simple Open Auction"
-msgstr ""
+msgstr "简单公开拍卖"
 
 #: ../../vyper-by-example.rst:11
 msgid ""
@@ -33,15 +33,15 @@ msgid ""
 "begin with a simple open auction contract. As we dive into the code, it "
 "is important to remember that all Vyper syntax is valid Python3 syntax, "
 "however not all Python3 functionality is available in Vyper."
-msgstr ""
+msgstr "作为用 Vyper 编写的智能合约的介绍性示例，我们将从一个简单的公开拍卖合约开始。在我们深入研究代码时，重要的是要记住，所有 Vyper 语法都是有效的 Python3 语法，但并非所有 Python3 功能都在 Vyper 中可用。"
 
 #: ../../vyper-by-example.rst:16
 msgid ""
 "In this contract, we will be looking at a simple open auction contract "
 "where participants can submit bids during a limited time period. When the"
 " auction period ends, a predetermined beneficiary will receive the amount"
-" of the highest bid."
-msgstr ""
+"of the highest bid."
+msgstr "在本合约中，我们将研究一个简单的公开拍卖合约，参与者可以在有限的时间内提交出价。当拍卖期结束时，预定的受益人将收到最高出价的金额。"
 
 #: ../../vyper-by-example.rst:25
 msgid ""
@@ -49,11 +49,11 @@ msgid ""
 " and a few variables to manage the contract state. Believe it or not, "
 "this is all we need for a basic implementation of an auction smart "
 "contract."
-msgstr ""
+msgstr "如您所见，此示例只有一个构造函数、两个要调用的方法和几个用于管理合约状态的变量。信不信由你，这就是我们实现拍卖智能合约基本功能所需的全部内容。"
 
 #: ../../vyper-by-example.rst:29
 msgid "Let's get started!"
-msgstr ""
+msgstr "让我们开始吧！"
 
 #: ../../vyper-by-example.rst:36
 msgid ""
@@ -68,7 +68,7 @@ msgid ""
 "the auction is officially over. The variable ``pendingReturns`` is a "
 "``map`` which enables the use of key-value pairs to keep proper track of "
 "the auctions withdrawal pattern."
-msgstr ""
+msgstr "我们首先声明一些变量来跟踪我们的合约状态。我们通过在数据类型 ``address`` 上调用 ``public`` 来初始化一个全局变量 ``beneficiary``。``beneficiary`` 将是最高出价者的收款人。我们还使用数据类型 ``uint256`` 初始化变量 ``auctionStart`` 和 ``auctionEnd`` 以管理公开拍卖期，并使用数据类型 ``uint256``（以太的最小单位）初始化 ``highestBid`` 以管理拍卖状态。变量 ``ended`` 是一个布尔值，用于确定拍卖是否正式结束。变量 ``pendingReturns`` 是一个 ``map``，它支持使用键值对来正确跟踪拍卖的提款模式。"
 
 #: ../../vyper-by-example.rst:46
 msgid ""
@@ -79,11 +79,11 @@ msgid ""
 "methods within the same contract. The ``public`` function additionally "
 "creates a ‘getter’ function for the variable, accessible through an "
 "external call such as ``contract.beneficiary()``."
-msgstr ""
+msgstr "您可能会注意到所有变量都传递给了 ``public`` 函数。通过将变量声明为*public*，该变量可以被外部合约调用。在没有 ``public`` 函数的情况下初始化变量默认为私有声明，因此只能由同一合约中的方法访问。``public`` 函数还为该变量创建一个“getter”函数，可通过外部调用（例如 ``contract.beneficiary()``）访问。"
 
 #: ../../vyper-by-example.rst:54
 msgid "Now, the constructor."
-msgstr ""
+msgstr "现在，是构造函数。"
 
 #: ../../vyper-by-example.rst:61
 msgid ""
@@ -98,13 +98,13 @@ msgid ""
 "information about the block at the time of calling. Similar to ``block``,"
 " another important object available to us within the contract is ``msg``,"
 " which provides information on the method caller as we will soon see."
-msgstr ""
+msgstr "合约使用三个参数进行初始化：类型为 ``address`` 的 ``_beneficiary``、类型为 ``uint256`` 的 ``_auction_start`` 和类型为 ``uint256`` 的 ``_bidding_time``，即拍卖开始和结束之间的时间差。然后，我们将这三条信息分别存储到合约变量 ``self.beneficiary``、``self.auctionStart`` 和 ``self.auctionEnd`` 中。请注意，我们可以通过调用 ``block.timestamp`` 来访问当前时间。``block`` 是任何 Vyper 合约中都可用的对象，它提供有关调用时区块的信息。与 ``block`` 类似，合约中另一个可用的重要对象是 ``msg``，它提供有关方法调用者的信息，我们稍后会看到。"
 
 #: ../../vyper-by-example.rst:72
 msgid ""
 "With initial setup out of the way, lets look at how our users can make "
 "bids."
-msgstr ""
+msgstr "完成初始设置后，让我们看看我们的用户如何出价。"
 
 #: ../../vyper-by-example.rst:79
 msgid ""
@@ -116,618 +116,4 @@ msgid ""
 "``msg`` and we can access the public address of any method caller with "
 "``msg.sender``. Similarly, the amount of ether a user sends can be "
 "accessed by calling ``msg.value``."
-msgstr ""
-
-#: ../../vyper-by-example.rst:87
-msgid ""
-"Here, we first check whether the current time is within the bidding "
-"period by comparing with the auction's start and end times using the "
-"``assert`` function which takes any boolean statement. We also check to "
-"see if the new bid is greater than the highest bid. If the three "
-"``assert`` statements pass, we can safely continue to the next lines; "
-"otherwise, the ``bid()`` method will throw an error and revert the "
-"transaction. If the two ``assert`` statements and the check that the "
-"previous bid is not equal to zero pass, we can safely conclude that we "
-"have a valid new highest bid. We will send back the previous "
-"``highestBid`` to the previous ``highestBidder`` and set our new "
-"``highestBid`` and ``highestBidder``."
-msgstr ""
-
-#: ../../vyper-by-example.rst:102
-msgid ""
-"With the ``endAuction()`` method, we check whether our current time is "
-"past the ``auctionEnd`` time we set upon initialization of the contract. "
-"We also check that ``self.ended`` had not previously been set to True. We"
-" do this to prevent any calls to the method if the auction had already "
-"ended, which could potentially be malicious if the check had not been "
-"made. We then officially end the auction by setting ``self.ended`` to "
-"``True`` and sending the highest bid amount to the beneficiary."
-msgstr ""
-
-#: ../../vyper-by-example.rst:110
-msgid ""
-"And there you have it - an open auction contract. Of course, this is a "
-"simplified example with barebones functionality and can be improved. "
-"Hopefully, this has provided some insight into the possibilities of "
-"Vyper. As we move on to exploring more complex examples, we will "
-"encounter more design patterns and features of the Vyper language."
-msgstr ""
-
-#: ../../vyper-by-example.rst:117
-msgid ""
-"And of course, no smart contract tutorial is complete without a note on "
-"security."
-msgstr ""
-
-#: ../../vyper-by-example.rst:121
-msgid ""
-"It's always important to keep security in mind when designing a smart "
-"contract. As any application becomes more complex, the greater the "
-"potential for introducing new risks. Thus, it's always good practice to "
-"keep contracts as readable and simple as possible."
-msgstr ""
-
-#: ../../vyper-by-example.rst:126
-msgid "Whenever you're ready, let's turn it up a notch in the next example."
-msgstr ""
-
-#: ../../vyper-by-example.rst:132
-msgid "Blind Auction"
-msgstr ""
-
-#: ../../vyper-by-example.rst:137
-msgid ""
-"Before we dive into our other examples, let's briefly explore another "
-"type of auction that you can build with Vyper. Similar to its "
-"counterpart_ written in Solidity, this blind auction allows for an "
-"auction where there is no time pressure towards the end of the bidding "
-"period."
-msgstr ""
-
-#: ../../vyper-by-example.rst:147
-msgid ""
-"While this blind auction is almost functionally identical to the blind "
-"auction implemented in Solidity, the differences in their implementations"
-" help illustrate the differences between Solidity and Vyper."
-msgstr ""
-
-#: ../../vyper-by-example.rst:154
-msgid ""
-"One key difference is that, because Vyper does not allow for dynamic "
-"arrays, we have limited the number of bids that can be placed by one "
-"address to 128 in this example. Bidders who want to make more than this "
-"maximum number of bids would need to do so from multiple addresses."
-msgstr ""
-
-#: ../../vyper-by-example.rst:163
-msgid "Safe Remote Purchases"
-msgstr ""
-
-#: ../../vyper-by-example.rst:167
-msgid ""
-"In this example, we have an escrow contract implementing a system for a "
-"trustless transaction between a buyer and a seller. In this system, a "
-"seller posts an item for sale and makes a deposit to the contract of "
-"twice the item's ``value``. At this moment, the contract has a balance of"
-" 2 * ``value``. The seller can reclaim the deposit and close the sale as "
-"long as a buyer has not yet made a purchase. If a buyer is interested in "
-"making a purchase, they would make a payment and submit an equal amount "
-"for deposit (totaling 2 * ``value``) into the contract and locking the "
-"contract from further modification. At this moment, the contract has a "
-"balance of 4 * ``value`` and the seller would send the item to buyer. "
-"Upon the buyer's receipt of the item, the buyer will mark the item as "
-"received in the contract, thereby returning the buyer's deposit (not "
-"payment), releasing the remaining funds to the seller, and completing the"
-" transaction."
-msgstr ""
-
-#: ../../vyper-by-example.rst:180
-msgid ""
-"There are certainly others ways of designing a secure escrow system with "
-"less overhead for both the buyer and seller, but for the purpose of this "
-"example, we want to explore one way how an escrow system can be "
-"implemented trustlessly."
-msgstr ""
-
-#: ../../vyper-by-example.rst:184
-msgid "Let's go!"
-msgstr ""
-
-#: ../../vyper-by-example.rst:190
-msgid ""
-"This is also a moderately short contract, however a little more complex "
-"in logic. Let's break down this contract bit by bit."
-msgstr ""
-
-#: ../../vyper-by-example.rst:198
-msgid ""
-"Like the other contracts, we begin by declaring our global variables "
-"public with their respective data types. Remember that the ``public`` "
-"function allows the variables to be *readable* by an external caller, but"
-" not *writeable*."
-msgstr ""
-
-#: ../../vyper-by-example.rst:207
-msgid ""
-"With a ``@payable`` decorator on the constructor, the contract creator "
-"will be required to make an initial deposit equal to twice the item's "
-"``value`` to initialize the contract, which will be later returned. This "
-"is in addition to the gas fees needed to deploy the contract on the "
-"blockchain, which is not returned. We ``assert`` that the deposit is "
-"divisible by 2 to ensure that the seller deposited a valid amount. The "
-"constructor stores the item's value in the contract variable "
-"``self.value`` and saves the contract creator into ``self.seller``. The "
-"contract variable ``self.unlocked`` is initialized to ``True``."
-msgstr ""
-
-#: ../../vyper-by-example.rst:222
-msgid ""
-"The ``abort()`` method is a method only callable by the seller and while "
-"the contract is still ``unlocked``—meaning it is callable only prior to "
-"any buyer making a purchase. As we will see in the ``purchase()`` method "
-"that when a buyer calls the ``purchase()`` method and sends a valid "
-"amount to the contract, the contract will be locked and the seller will "
-"no longer be able to call ``abort()``."
-msgstr ""
-
-#: ../../vyper-by-example.rst:229
-msgid ""
-"When the seller calls ``abort()`` and if the ``assert`` statements pass, "
-"the contract will call the ``selfdestruct()`` function and refunds the "
-"seller and subsequently destroys the contract."
-msgstr ""
-
-#: ../../vyper-by-example.rst:238
-msgid ""
-"Like the constructor, the ``purchase()`` method has a ``@payable`` "
-"decorator, meaning it can be called with a payment. For the buyer to make"
-" a valid purchase, we must first ``assert`` that the contract's "
-"``unlocked`` property is ``True`` and that the amount sent is equal to "
-"twice the item's value. We then set the buyer to the ``msg.sender`` and "
-"lock the contract. At this point, the contract has a balance equal to 4 "
-"times the item value and the seller must send the item to the buyer."
-msgstr ""
-
-#: ../../vyper-by-example.rst:251
-msgid ""
-"Finally, upon the buyer's receipt of the item, the buyer can confirm "
-"their receipt by calling the ``received()`` method to distribute the "
-"funds as intended—where the seller receives 3/4 of the contract balance "
-"and the buyer receives 1/4."
-msgstr ""
-
-#: ../../vyper-by-example.rst:256
-msgid ""
-"By calling ``received()``, we begin by checking that the contract is "
-"indeed locked, ensuring that a buyer had previously paid. We also ensure "
-"that this method is only callable by the buyer. If these two ``assert`` "
-"statements pass, we refund the buyer their initial deposit and send the "
-"seller the remaining funds. The contract is finally destroyed and the "
-"transaction is complete."
-msgstr ""
-
-#: ../../vyper-by-example.rst:262
-msgid "Whenever we’re ready, let’s move on to the next example."
-msgstr ""
-
-#: ../../vyper-by-example.rst:267
-msgid "Crowdfund"
-msgstr ""
-
-#: ../../vyper-by-example.rst:271
-msgid ""
-"Now, let's explore a straightforward example for a crowdfunding contract "
-"where prospective participants can contribute funds to a campaign. If the"
-" total contribution to the campaign reaches or surpasses a predetermined "
-"funding goal, the funds will be sent to the  beneficiary at the end of "
-"the campaign deadline. Participants will be refunded their respective "
-"contributions if the total funding does not reach its target goal."
-msgstr ""
-
-#: ../../vyper-by-example.rst:282
-msgid ""
-"Most of this code should be relatively straightforward after going "
-"through our previous examples. Let's dive right in."
-msgstr ""
-
-#: ../../vyper-by-example.rst:290
-msgid ""
-"Like other examples, we begin by initiating our variables - except this "
-"time, we're not calling them with the ``public`` function. Variables "
-"initiated this way are, by default, private."
-msgstr ""
-
-#: ../../vyper-by-example.rst:295
-msgid ""
-"Unlike the existence of the function ``public()``, there is no equivalent"
-" ``private()`` function. Variables simply default to private if initiated"
-" without the ``public()`` function."
-msgstr ""
-
-#: ../../vyper-by-example.rst:299
-msgid ""
-"The ``funders`` variable is initiated as a mapping where the key is an "
-"address, and the value is a number representing the contribution of each "
-"participant. The ``beneficiary`` will be the final receiver of the funds "
-"once the crowdfunding period is over—as determined by the ``deadline`` "
-"and ``timelimit`` variables. The ``goal`` variable is the target total "
-"contribution of all participants."
-msgstr ""
-
-#: ../../vyper-by-example.rst:311
-msgid ""
-"Our constructor function takes 3 arguments: the beneficiary's address, "
-"the goal in wei value, and the difference in time from start to finish of"
-" the crowdfunding. We initialize the arguments as contract variables with"
-" their corresponding names. Additionally, a ``self.deadline`` is "
-"initialized to set a definitive end time for the crowdfunding period."
-msgstr ""
-
-#: ../../vyper-by-example.rst:317
-msgid "Now lets take a look at how a person can participate in the crowdfund."
-msgstr ""
-
-#: ../../vyper-by-example.rst:324
-msgid ""
-"Once again, we see the ``@payable`` decorator on a method, which allows a"
-" person to send some ether along with a call to the method. In this case,"
-" the ``participate()`` method accesses the sender's address with "
-"``msg.sender`` and the corresponding amount sent with ``msg.value``. This"
-" information is stored into a struct and then saved into the ``funders`` "
-"mapping with ``self.nextFunderIndex`` as the key. As more participants "
-"are added to the mapping, ``self.nextFunderIndex`` increments "
-"appropriately to properly index each participant."
-msgstr ""
-
-#: ../../vyper-by-example.rst:338
-msgid ""
-"The ``finalize()`` method is used to complete the crowdfunding process. "
-"However, to complete the crowdfunding, the method first checks to see if "
-"the crowdfunding period is over and that the balance has reached/passed "
-"its set goal. If those two conditions pass, the contract calls the "
-"``selfdestruct()`` function and sends the collected funds to the "
-"beneficiary."
-msgstr ""
-
-#: ../../vyper-by-example.rst:345
-msgid ""
-"Notice that we have access to the total amount sent to the contract by "
-"calling ``self.balance``, a variable we never explicitly set. Similar to "
-"``msg`` and ``block``, ``self.balance`` is a built-in variable that's "
-"available in all Vyper contracts."
-msgstr ""
-
-#: ../../vyper-by-example.rst:350
-msgid ""
-"We can finalize the campaign if all goes well, but what happens if the "
-"crowdfunding campaign isn't successful? We're going to need a way to "
-"refund all the participants."
-msgstr ""
-
-#: ../../vyper-by-example.rst:359
-msgid ""
-"In the ``refund()`` method, we first check that the crowdfunding period "
-"is indeed over and that the total collected balance is less than the "
-"``goal`` with the  ``assert`` statement . If those two conditions pass, "
-"we let users get their funds back using the withdraw pattern."
-msgstr ""
-
-#: ../../vyper-by-example.rst:367
-msgid "Voting"
-msgstr ""
-
-#: ../../vyper-by-example.rst:369
-msgid ""
-"In this contract, we will implement a system for participants to vote on "
-"a list of proposals. The chairperson of the contract will be able to give"
-" each participant the right to vote, and each participant may choose to "
-"vote, or delegate their vote to another voter. Finally, a winning "
-"proposal will be determined upon calling the ``winningProposals()`` "
-"method, which iterates through all the proposals and returns the one with"
-" the greatest number of votes."
-msgstr ""
-
-#: ../../vyper-by-example.rst:380
-msgid ""
-"As we can see, this is the contract of moderate length which we will "
-"dissect section by section. Let’s begin!"
-msgstr ""
-
-#: ../../vyper-by-example.rst:388
-msgid ""
-"The variable ``voters`` is initialized as a mapping where the key is the "
-"voter’s public address and the value is a struct describing the voter’s "
-"properties: ``weight``, ``voted``, ``delegate``, and ``vote``, along with"
-" their respective data types."
-msgstr ""
-
-#: ../../vyper-by-example.rst:393
-msgid ""
-"Similarly, the ``proposals`` variable is initialized as a ``public`` "
-"mapping with ``int128`` as the key’s datatype and a struct to represent "
-"each proposal with the properties ``name`` and ``vote_count``. Like our "
-"last example, we can access any value by key’ing into the mapping with a "
-"number just as one would with an index in an array."
-msgstr ""
-
-#: ../../vyper-by-example.rst:399
-msgid ""
-"Then, ``voterCount`` and ``chairperson`` are initialized as ``public`` "
-"with their respective datatypes."
-msgstr ""
-
-#: ../../vyper-by-example.rst:402
-msgid "Let’s move onto the constructor."
-msgstr ""
-
-#: ../../vyper-by-example.rst:409
-msgid ""
-"In the constructor, we hard-coded the contract to accept an array "
-"argument of exactly two proposal names of type ``bytes32`` for the "
-"contracts initialization. Because upon initialization, the ``__init__()``"
-" method is called by the contract creator, we have access to the contract"
-" creator’s address with ``msg.sender`` and store it in the contract "
-"variable ``self.chairperson``. We also initialize the contract variable "
-"``self.voter_count`` to zero to initially represent the number of votes "
-"allowed. This value will be incremented as each participant in the "
-"contract is given the right to vote by the method ``giveRightToVote()``, "
-"which we will explore next. We loop through the two proposals from the "
-"argument and insert them into ``proposals`` mapping with their respective"
-" index in the original array as its key."
-msgstr ""
-
-#: ../../vyper-by-example.rst:421
-msgid "Now that the initial setup is done, lets take a look at the functionality."
-msgstr ""
-
-#: ../../vyper-by-example.rst:428
-msgid ""
-"Throughout this contract, we use a pattern where ``@external`` functions "
-"return data from ``@internal`` functions that have the same name "
-"prepended with an underscore. This is because Vyper does not allow calls "
-"between external functions within the same contract. The internal "
-"function handles the logic and allows internal access, while the external"
-" function acts as a getter to allow external viewing."
-msgstr ""
-
-#: ../../vyper-by-example.rst:430
-msgid ""
-"We need a way to control who has the ability to vote. The method "
-"``giveRightToVote()`` is a method callable by only the chairperson by "
-"taking a voter address and granting it the right to vote by incrementing "
-"the voter's ``weight`` property. We sequentially check for 3 conditions "
-"using ``assert``. The ``assert not`` function will check for falsy "
-"boolean values - in this case, we want to know that the voter has not "
-"already voted. To represent voting power, we will set their ``weight`` to"
-" ``1`` and we will keep track of the total number of voters by "
-"incrementing ``voterCount``."
-msgstr ""
-
-#: ../../vyper-by-example.rst:444
-msgid ""
-"In the method ``delegate``, firstly, we check to see that ``msg.sender`` "
-"has not already voted and secondly, that the target delegate and the "
-"``msg.sender`` are not the same. Voters shouldn’t be able to delegate "
-"votes to themselves. We, then, loop through all the voters to determine "
-"whether the person delegate to had further delegated their vote to "
-"someone else in order to follow the chain of delegation. We then mark the"
-" ``msg.sender`` as having voted if they delegated their vote. We "
-"increment the proposal’s ``voterCount`` directly if the delegate had "
-"already voted or increase the  delegate’s vote ``weight`` if the delegate"
-" has not yet voted."
-msgstr ""
-
-#: ../../vyper-by-example.rst:459
-msgid ""
-"Now, let’s take a look at the logic inside the ``vote()`` method, which "
-"is surprisingly simple. The method takes the key of the proposal in the "
-"``proposals`` mapping as an argument, check that the method caller had "
-"not already voted, sets the voter’s ``vote`` property to the proposal "
-"key, and increments the proposals ``voteCount`` by the voter’s "
-"``weight``."
-msgstr ""
-
-#: ../../vyper-by-example.rst:465
-msgid ""
-"With all the basic functionality complete, what’s left is simply "
-"returning the winning proposal. To do this, we have two methods: "
-"``winningProposal()``, which returns the key of the proposal, and "
-"``winnerName()``, returning the name of the proposal. Notice the "
-"``@view`` decorator on these two methods. We do this because the two "
-"methods only read the blockchain state and do not modify it. Remember, "
-"reading the blockchain state is free; modifying the state costs gas. By "
-"having the ``@view`` decorator, we let the EVM know that this is a read-"
-"only function and we benefit by saving gas fees."
-msgstr ""
-
-#: ../../vyper-by-example.rst:479
-msgid ""
-"The ``_winningProposal()`` method returns the key of proposal in the "
-"``proposals`` mapping. We will keep track of greatest number of votes and"
-" the winning proposal with the variables ``winningVoteCount`` and "
-"``winningProposal``, respectively by looping through all the proposals."
-msgstr ""
-
-#: ../../vyper-by-example.rst:484
-msgid ""
-"``winningProposal()`` is an external function allowing access to "
-"``_winningProposal()``."
-msgstr ""
-
-#: ../../vyper-by-example.rst:491
-msgid ""
-"And finally, the ``winnerName()`` method returns the name of the proposal"
-" by key’ing into the ``proposals`` mapping with the return result of the "
-"``winningProposal()`` method."
-msgstr ""
-
-#: ../../vyper-by-example.rst:495
-msgid ""
-"And there you have it - a voting contract. Currently, many transactions "
-"are needed to assign the rights to vote to all participants. As an "
-"exercise, can we try to optimize this?"
-msgstr ""
-
-#: ../../vyper-by-example.rst:499
-msgid ""
-"Now that we're familiar with basic contracts. Let's step up the "
-"difficulty."
-msgstr ""
-
-#: ../../vyper-by-example.rst:504
-msgid "Company Stock"
-msgstr ""
-
-#: ../../vyper-by-example.rst:508
-msgid ""
-"This contract is just a tad bit more thorough than the ones we've "
-"previously encountered. In this example, we are going to look at a "
-"comprehensive contract that manages the holdings of all shares of a "
-"company. The contract allows for a person to buy, sell and transfer "
-"shares of a company as well as allowing for the company to pay a person "
-"in ether. The company, upon initialization of the contract, holds all "
-"shares of the company at first but can sell them all."
-msgstr ""
-
-#: ../../vyper-by-example.rst:515
-msgid "Let's get started."
-msgstr ""
-
-#: ../../vyper-by-example.rst:521
-msgid ""
-"Throughout this contract, we use a pattern where ``@external`` functions "
-"return data from ``@internal`` functions that have the same name "
-"prepended with an underscore. This is because Vyper does not allow calls "
-"between external functions within the same contract. The internal "
-"function handles the logic, while the external function acts as a getter "
-"to allow viewing."
-msgstr ""
-
-#: ../../vyper-by-example.rst:523
-msgid ""
-"The contract contains a number of methods that modify the contract state "
-"as well as a few 'getter' methods to read it. We first declare several "
-"events that the contract logs. We then declare our global variables, "
-"followed by function definitions."
-msgstr ""
-
-#: ../../vyper-by-example.rst:533
-msgid ""
-"We initiate the ``company`` variable to be of type ``address`` that's "
-"public. The ``totalShares`` variable is of type ``uint256``, which in "
-"this case represents the total available shares of the company. The "
-"``price`` variable represents the wei value of a share and ``holdings`` "
-"is a mapping that maps an address to the number of shares the address "
-"owns."
-msgstr ""
-
-#: ../../vyper-by-example.rst:544
-msgid ""
-"In the constructor, we set up the contract to check for valid inputs "
-"during the initialization of the contract via the two ``assert`` "
-"statements. If the inputs are valid, the contract variables are set "
-"accordingly and the company's address is initialized to hold all shares "
-"of the company in the ``holdings`` mapping."
-msgstr ""
-
-#: ../../vyper-by-example.rst:555
-msgid ""
-"We will be seeing a few ``@view`` decorators in this contract—which is "
-"used to decorate methods that simply read the contract state or return a "
-"simple calculation on the contract state without modifying it. Remember, "
-"reading the blockchain is free, writing on it is not. Since Vyper is a "
-"statically typed language, we see an arrow following the definition of "
-"the ``_stockAvailable()`` method, which simply represents the data type "
-"which the function is expected to return. In the method, we simply key "
-"into ``self.holdings`` with the company's address and check it's "
-"holdings.  Because ``_stockAvailable()`` is an internal method, we also "
-"include the ``stockAvailable()`` method to allow external access."
-msgstr ""
-
-#: ../../vyper-by-example.rst:566
-msgid ""
-"Now, lets take a look at a method that lets a person buy stock from the "
-"company's holding."
-msgstr ""
-
-#: ../../vyper-by-example.rst:574
-msgid ""
-"The ``buyStock()`` method is a ``@payable`` method which takes an amount "
-"of ether sent and calculates the ``buyOrder`` (the stock value "
-"equivalence at the time of call). The number of shares is deducted from "
-"the company's holdings and transferred to the sender's in the "
-"``holdings`` mapping."
-msgstr ""
-
-#: ../../vyper-by-example.rst:579
-msgid "Now that people can buy shares, how do we check someone's holdings?"
-msgstr ""
-
-#: ../../vyper-by-example.rst:586
-msgid ""
-"The ``_getHolding()`` is another ``@view`` method that takes an "
-"``address`` and returns its corresponding stock holdings by keying into "
-"``self.holdings``. Again, an external function ``getHolding()`` is "
-"included to allow access."
-msgstr ""
-
-#: ../../vyper-by-example.rst:595
-msgid ""
-"To check the ether balance of the company, we can simply call the getter "
-"method ``cash()``."
-msgstr ""
-
-#: ../../vyper-by-example.rst:603
-msgid ""
-"To sell a stock, we have the ``sellStock()`` method which takes a number "
-"of stocks a person wishes to sell, and sends the equivalent value in "
-"ether to the seller's address. We first ``assert`` that the number of "
-"stocks the person wishes to sell is a value greater than ``0``. We also "
-"``assert`` to see that the user can only sell as much as the user owns "
-"and that the company has enough ether to complete the sale. If all "
-"conditions are met, the holdings are deducted from the seller and given "
-"to the company. The ethers are then sent to the seller."
-msgstr ""
-
-#: ../../vyper-by-example.rst:616
-msgid ""
-"A stockholder can also transfer their stock to another stockholder with "
-"the ``transferStock()`` method. The method takes a receiver address and "
-"the number of shares to send. It first ``asserts`` that the amount being "
-"sent is greater than ``0`` and ``asserts`` whether the sender has enough "
-"stocks to send. If both conditions are satisfied, the transfer is made."
-msgstr ""
-
-#: ../../vyper-by-example.rst:627
-msgid ""
-"The company is also allowed to pay out an amount in ether to an address "
-"by calling the ``payBill()`` method. This method should only be callable "
-"by the company and thus first checks whether the method caller's address "
-"matches that of the company. Another important condition to check is that"
-" the company has enough funds to pay the amount. If both conditions "
-"satisfy, the contract sends its ether to an address."
-msgstr ""
-
-#: ../../vyper-by-example.rst:639
-msgid ""
-"We can also check how much the company has raised by multiplying the "
-"number of shares the company has sold and the price of each share. "
-"Internally, we get this value by calling the ``_debt()`` method. "
-"Externally it is accessed via ``debt()``."
-msgstr ""
-
-#: ../../vyper-by-example.rst:648
-msgid ""
-"Finally, in this ``worth()`` method, we can check the worth of a company "
-"by subtracting its debt from its ether balance."
-msgstr ""
-
-#: ../../vyper-by-example.rst:651
-msgid ""
-"This contract has been the most thorough example so far in terms of its "
-"functionality and features. Yet despite the thoroughness of such a "
-"contract, the logic remained simple. Hopefully, by now, the Vyper "
-"language has convinced you of its capabilities and readability in writing"
-" smart contracts."
-msgstr ""
-
+msgstr "``@payable`` 装饰器将允许用户向合约发送一些以太币以调用被装饰的方法。在这种情况下，想要出价的用户将调用 ``bid()`` 方法，同时发送等于其期望出价的金额（不包括 gas 费）。在合约中调用任何方法时，我们都会获得一个内置变量 ``msg``，我们可以使用 ``msg.sender`` 访问任何方法调用者的公共地址。同样，用户发送的以太币数量可以通过调用 ``msg.value`` 来访问。"
