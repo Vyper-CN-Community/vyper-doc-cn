@@ -11,11 +11,16 @@
 推荐使用 `uv` 包管理器进行依赖管理：
 
 ```bash
+
+uv venv
+
+venv\Scripts\activate
+
 # 安装文档构建依赖
 uv pip install -e .[docs]
 
 # 或者使用传统 pip（如果缺少某些包，需要单独安装）
-pip install sphinx==7.2.6 sphinx-copybutton==0.5.2 shibuya==2024.1.17 sphinx-intl>=2.1.0
+uv pip install sphinx==7.2.6 sphinx-copybutton==0.5.2 shibuya==2024.1.17 sphinx-intl>=2.1.0
 ```
 
 ### 文档构建

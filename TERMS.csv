@@ -28,3 +28,4 @@
  bound (range) , 上界（bound） 
  pragma , 编译指示 
  layout (storage layout) , 布局 
+literal tuples , 字面量元组（直接写出的元组）
