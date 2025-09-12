@@ -68,9 +68,10 @@ def summarize(data: dict) -> str:
 def main():
     allow_warnings = "--allow-warnings" in sys.argv
     langs = ["en"]
-    if (DOCS / "locales").exists():
+    # detect languages present besides en under docs/locale/<lang>/LC_MESSAGES
+    if (DOCS / "locale").exists():
         # detect languages present besides en
-        for p in (DOCS / "locales").iterdir():
+        for p in (DOCS / "locale").iterdir():
             if p.is_dir() and (p / "LC_MESSAGES").exists() and p.name != "en":
                 langs.append(p.name)
     all_data = {}
