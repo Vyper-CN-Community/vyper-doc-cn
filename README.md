@@ -86,6 +86,78 @@ python scripts\check_docs.py
   - `test.yml`：仅运行 docs 任务，其余 lint/test/fuzz/coverage 跳过；
   - `build.yml`、`codeql.yml`、`ghcr.yml`：对 docs-only 变更忽略触发，减少无关噪音。
 
+## 日常增量翻译工作流（推荐）
+
+以下流程覆盖“跟踪上游 → 自动提醒/同步 → 本地增量翻译 → 构建校验 → 更新 README 进度 → 提交 PR 合并”的完整闭环。
+
+1. 跟踪上游（自动/手动）
+
+  自动：`sync_docs.yml` 每日检查上游 `vyperlang/vyper@master` 的 `docs/` 与 `README.*` 变更，自动创建同步 PR，附带 gettext 统计。
+
+  手动（可选）：
+
+  ```bat
+  git fetch origin
+  git fetch upstream
+  git diff --name-only origin/master upstream/master -- docs/ README.*
+  ```
+
+1. 合并上游变更（到 master）
+
+  可直接审查并合并 “Sync upstream docs” PR；或在本地合并：
+
+  ```bat
+  git checkout master
+  git merge upstream/master
+  git push origin master
+  ```
+
+1. 生成模板并更新中文 PO（增量）
+
+  ```bat
+  python -m sphinx -b gettext docs docs\_build\gettext
+  sphinx-intl update -p docs\_build\gettext -l zh_CN
+  ```
+
+  仅有差异的条目会出现在 PO 中，无需从头翻译。
+
+1. 翻译增量条目
+
+  使用 Poedit 或编辑器打开 `docs/locale/zh_CN/LC_MESSAGES/*.po`，优先处理变更过的文件。
+
+1. 本地构建与严格检查
+
+  ```bat
+  python -m sphinx -b html -D language=zh_CN docs docs\_build\html\zh_CN
+  python scripts\check_docs.py
+  ```
+
+1. 更新 README 翻译进度（自动区块）
+
+  ```bat
+  python scripts\po_stats.py > po_stats.json
+  python scripts\update_readme_progress.py
+  git add docs\locale\zh_CN\LC_MESSAGES\ *.po README.md po_stats.json
+  git commit -m "docs(i18n): update zh_CN PO and progress"
+  ```
+
+1. 提交 PR 并合并
+
+  ```bat
+  git checkout -b i18n\update-%DATE:~0,4%%DATE:~5,2%%DATE:~8,2%
+  git push -u origin i18n\update-%DATE:~0,4%%DATE:~5,2%%DATE:~8,2%
+  ```
+
+  打开 PR，CI 将仅运行 docs 相关任务；合并后 `update_readme_progress.yml` 也会在 master 上自动运行以刷新 README 区块。
+
+1. 发布（可选）
+
+  若使用 Read the Docs，确保项目开启中文翻译（`zh_CN`），构建完成后在线页面将自动刷新：
+
+  英文：<https://your-project.readthedocs.io/en/latest/>
+
+  中文：<https://your-project.readthedocs.io/zh_CN/latest/>
+
 ## 翻译进度（自动更新）
 
 以下区块由 CI 自动维护，请勿手动修改：
